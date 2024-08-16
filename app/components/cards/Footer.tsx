@@ -1,25 +1,49 @@
+'use client'
+
+import { BACKEND_URL } from "@/app/lib/config"
+import axios from "axios"
 import { LocateIcon, Mail, Phone } from "lucide-react"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
 
 
 export const Footer = ()=>{
+  
+  const [list, setList] = useState([''])
+  
+  useEffect(()=>{
+    sendReq()
+  },[])
+    
+  const sendReq = async () => { 
+    const res = await axios.get(`${BACKEND_URL}/companies/all`)
+    const response = res.data 
+    console.log("nav");
+    const lists = response.map((comp:any)=> comp.company_name)
+    console.log(lists);
+    
+    setList(lists)  
+    // setCompany(response)
+  }
   const feilds = [
     {
      name:'Home',
-     subfeilds: ['About', 'Service','Blog'] 
+     subfeilds: ['About'] 
     },
     
     {
      name:'Manufacturer',
-     subfeilds: ["Pro-face","Mitsubishi", "Omron", "Fanux", "Delta", "HITECH", "Yashkawa", "Keyence", "Sick", "Panacsonic", "intek/Weinvi", "Schneider", "Siemens" ,"Hongfa"] 
+     subfeilds: [...list] 
     },
     {
      name:'Products',
-     subfeilds: ['Measurement Instrument', 'PLC','Severmeter',"Severo drive", "HMI","VFD" ,"Sensor", "Circuit Breaker", "Relay" ] 
+     subfeilds: ['Cooling fans', 'Axial fans','Multipurpose fans',"Heating fans" ] 
     },
 
   ]
+  
+  
   return <footer className="footer">
     <div className=" pt-16 md:pt-20 lg:pt-32 pb-20 ">
       <div className=" px-8 lg:px-4 md:mx-20 lg:mx-28">
@@ -47,7 +71,7 @@ Global Electronic Solutions, Gurgaon - 122505, Gurugram, Haryana, India
    </div>
 
    <div className=" hidden md:flex lg:flex flex-col ml-20"> 
-    {feilds.map((feild, idx)=><FooterContents key={idx} feilds={feild.name} names={feild.subfeilds} />)}  
+    {feilds.map((feild:any, idx)=><FooterContents key={idx} feilds={feild.name} names={feild.subfeilds} />)}  
    </div>
       </div>
       </div>
@@ -94,8 +118,10 @@ export const FooterContents = ({feilds, names}:{feilds:string, names:string[]})=
 export const Names = ({name}:{name:string})=>{
 
 return <div className=" mt-4">
+     <Link  href={` ${name.includes('fans')?'/companies':name.includes('about')?'/':`/companies/${encodeURIComponent(name)}`} `}> 
   <div className="   text-sm font-extralight cursor-pointer hover:text-cyan-300 hover:underline">
     {name}
   </div>
+  </Link>
   </div>
 }

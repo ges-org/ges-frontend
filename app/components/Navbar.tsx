@@ -175,12 +175,12 @@ const sendReq = async () => {
             </Link>
           </div>
 
-          <div className="  text-black text-lg sm:text-xl md:text-xl lg:text-2xl text-dcenter mt:mt-4 lg:mt-4 fldex items-center w-[500px] font-medium">
+          <div className="  text-black text-lg sm:text-xl md:text-xl lg:text-2xl text-dcenter mt:mt-4 lg:mt-4 fldex items-center md:w-[500px] lg:w-[500px] font-medium">
          <Link href={"/"}>
             Global Electronics Solutions
          </Link>
             <div className="  ">
-              <div className=" text-xs max-w-xs md:max-w-sm lg:max-w-sm">Global Electronic Solutions, Gurgaon, Gurugram, Haryana</div>
+              <div className=" text-xs   md:max-w-sm lg:max-w-sm">Global Electronic Solutions, Gurgaon, Gurugram, Haryana</div>
             </div>
           </div>
           <div onClick={()=>{ setResponsiveNav(!responseiveNav);setShowSearch(false);setSearchTerm('') }} className=" scale-75 md:scale-100 lg:scale-100 md:hidden lg:hidden cursor-pointer text-black">
