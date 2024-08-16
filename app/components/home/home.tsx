@@ -14,8 +14,6 @@ export default function Main() {
 
  
   return <div className={` banner flex h-screen items-center`}>
-    {/* <Image  quality="100"
-         className=" opacity-30" layout="fill" alt="" src={'/fan.jpg'}/> */}
         <div className=" mx-4 md:mx-8 lg:mx-auto max-w-screen-lg py-32 w-full h-full">
            <div className=" flex justify-start ">
            <div className="max-w-xl px-9 py-14 rounded-lg bg-[rgba(57,59,59,0.7)]">
@@ -35,7 +33,6 @@ export default function Main() {
            </div>
         <div className=" lg:inline md:inline hidden go-down absolute -bottom-20 left-[37%]">
 
-                </a>
             </div>
         </div> 
       {contactBtn && <EnquiryCard contact={true} />}
