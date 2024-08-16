@@ -16,7 +16,7 @@ export default function Main() {
   return <div className={` banner flex h-screen items-center`}>
         <div className=" mx-4 md:mx-8 lg:mx-auto max-w-screen-lg py-32 w-full h-full">
            <div className=" flex justify-start ">
-           <div className="max-w-xl px-9 py-14 rounded-lg bg-[rgba(57,59,59,0.7)]">
+           <div className="max-w-xl px-4 md:px-7 lg:px-9 py-14 rounded-lg bg-[rgba(57,59,59,0.7)]">
             <div className=" text-3xl md:text-4xl lg:text-5xl font-semibold">
            Cooling Fans Distributor in India
             </div>
