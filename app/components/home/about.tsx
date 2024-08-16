@@ -13,7 +13,7 @@ export const About = ()=>{
       </div>
       </div>
       <div className=" mt-7 lg:mt-0 lg:ml-auto m-0 lg:p-custom lg:w-5/6 lg:max-w-4xl rounded-md text-white bg-[#348ad4e6] py-4 px-7 pb-7 lg:px-20 lg:py-10">
-         <p  className=" mt-6">Global Electromic Solutions is a one-stop sourcing base that supplies all types of cooling fans, including state-of-the-art or hard-to-find products.</p>
+         <p  className=" mt-6">Global Electronic Solutions is a one-stop sourcing base that supplies all types of cooling fans, including state-of-the-art or hard-to-find products.</p>
          <p className=" mt-6">Serving customers in and out of India, we have gained recognition with a strong commitment to helping customers improve productivity and profitability.</p>
          <p className=" mt-6">With direct relationships with brand suppliers, we get more preferential pricing for genuine products.</p>
          <p className=" mt-6">Dedicated to building long-term relationships with global customers, We can guarantee a preferential quotation with the price lower than the market price, allowing you to achieve higher market margins.</p>
