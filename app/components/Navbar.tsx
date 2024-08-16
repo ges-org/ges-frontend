@@ -163,7 +163,7 @@ const sendReq = async () => {
 
   return (
     <div
-      className={cn("fixed flex-none inset-x-11 mx-aukto w-full z-50", className)}
+      className={cn("fixed flex-none inset-x-11 mx-aukto w-full z-0", className)}
     >
       <div className="flex h-20">
           
@@ -183,7 +183,7 @@ const sendReq = async () => {
               <div className=" text-xs max-w-xs md:max-w-sm lg:max-w-sm">Global Electronic Solutions, Gurgaon, Gurugram, Haryana</div>
             </div>
           </div>
-          <div onClick={()=>{ setResponsiveNav(!responseiveNav);setShowSearch(false);setSearchTerm('') }} className=" scale-75 md:scale-100 lg:scale-100 md:hidden lg:hidden cursor-pointer text-black">
+          <div onClick={()=>{ setResponsiveNav(!responseiveNav);setShowSearch(false);setSearchTerm('') }} className=" scale-75 md:scale-100 lg:scale-100 md:hidden lg:hidden cursor-pointer text-black z-10">
            <MenuIcon size={45}/>
         </div> 
           </div>
