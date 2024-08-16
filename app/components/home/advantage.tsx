@@ -19,6 +19,8 @@ export const Advantages = ()=>{
 
   return <div className=" max-w-screen-2xl bg-white text-black">
    <div className=" py-32 bg-white text-black"> 
+    <div className=" text-4xl font-semibold ml-6 flex justify-center">
+    </div>
     <div className=" mx-5 lg:mx-10">
     <div className=" my-20 lg:ml-8 w-full px-2 box-border grid grid-cols-1 md:grid-cols-2 lg:flex ">
       <div>
