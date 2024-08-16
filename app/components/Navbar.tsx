@@ -6,8 +6,8 @@ import { Button } from "./ui/Button";
 import Link from "next/link";
 import { EnquiryCard } from "./cards/EnquiryCard";
 import { useRecoilState } from "recoil";
-import {  quoteState, sendEnquiryState, showSearchState } from "../recoilContextProvider";
-import { ExternalLink, Link2Icon, MenuIcon, Search } from "lucide-react";
+import {  quoteState, responsiveNavState, sendEnquiryState, showSearchState } from "../recoilContextProvider";
+import { Cross, ExternalLink, Link2Icon, MenuIcon, Search, X } from "lucide-react";
 import { countries } from "./sample";
 import axios from "axios";
 import { BACKEND_URL } from "../lib/config";
@@ -28,7 +28,7 @@ function NavbarCheck({ className }: { className?: string }) {
   const [active2, setActive2] = useState<string | null>(null);
   const [showEnquiryCard, setShowEnquiryCard] = useRecoilState(quoteState);
   const [sendEnquiry, setSendEnquiry] = useRecoilState(sendEnquiryState)
-  const[start,setStart] = useState(false) 
+  const[start,setStart] = useRecoilState(responsiveNavState) 
   const [showSearch, setShowSearch] = useRecoilState(showSearchState)
   const [list, setList] = useState([])
   const [responseiveNav, setResponsiveNav] = useState(false)
@@ -183,8 +183,9 @@ const sendReq = async () => {
               <div className=" text-xs   md:max-w-sm lg:max-w-sm">Global Electronic Solutions, Gurgaon, Gurugram, Haryana</div>
             </div>
           </div>
-          <div onClick={()=>{ setResponsiveNav(!responseiveNav);setShowSearch(false);setSearchTerm('') }} className=" scale-75 md:scale-100 lg:scale-100 md:hidden lg:hidden cursor-pointer text-black z-50">
-           <MenuIcon size={45}/>
+          <div onClick={()=>{ setResponsiveNav(!responseiveNav);setShowSearch(false);setSearchTerm('') }} className=" scale-75 md:scale-100 lg:scale-100 md:hidden lg:hidden cursor-pointer text-black z-50 transition-all duration-500">
+            {responseiveNav?<X size={45} className=" transition-all duration-500"/>: <MenuIcon size={45} className=" transition-all duration-500"/>}
+          
         </div> 
           </div>
           <motion.div
@@ -244,7 +245,7 @@ const sendReq = async () => {
 </div>
 
           <div className=" mt-5 ">
-            <Button quote={true} nav={true} label={"Request a quote "} height={12} onclick={toggleEnquiryCard} productCard={false} />
+            <Button quote={true} nav={true} label={"Request a quote "} height={12} onclick={()=> {toggleEnquiryCard(); setResponsiveNav(!responseiveNav)}} productCard={false} />
           </div>
         </div> 
           </div>
@@ -259,7 +260,7 @@ const sendReq = async () => {
               </div>
             </MenuItem> */} 
             <MenuItem setActive={setActive2} active={active2} item={"Companies"}>
-              <div onClick={()=>{}} className=" flex flex-col space-y-5 text-sm">
+              <div onClick={()=>{ }} className=" flex flex-col space-y-5 text-sm">
                 {list.map((company, idx) => { 
                   // const formattedCompany = company.comapny_name.charAt(0).toUpperCase() + company.company_name.slice(1).toLowerCase();
                   return (

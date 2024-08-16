@@ -140,6 +140,8 @@ body {
   #cur-banner::after {
       -webkit-background-size: cover;
       background-size: cover;
+  background-size: 350% 100%;
+     
   }
 }
 #comp {

@@ -19,10 +19,11 @@ export const Advantages = ()=>{
 
   return <div className=" max-w-screen-2xl bg-white text-black">
    <div className=" py-32 bg-white text-black"> 
-    <div className=" text-4xl font-semibold ml-6 flex justify-center">
+    <div className=" text-center text-2xl md:text-3xl lg:text-4xl font-semibold ml-6 flex justify-center">
+    Unbeatable Advantages
     </div>
-    <div className=" mx-5 lg:mx-10">
-    <div className=" my-20 lg:ml-8 w-full px-2 box-border grid grid-cols-1 md:grid-cols-2 lg:flex ">
+    <div className=" mx-2 md:mx-5 lg:mx-10">
+    <div className=" md:20 lg:my-20 lg:ml-8 w-full px-2 box-border grid grid-cols-1 md:grid-cols-2 lg:flex ">
       <div>
      <AdvantageCard title="Wide Product Selection" content="Our full product lines can provide you with the right product of the right brand, thus you can reduce a supply base, shorten the purchasing circle, and meet your business goal." image="icon01.png" right={false}/>
      <AdvantageCard title="Unbeatable Price" content="Our ever-growing distributorship network with world-class brand suppliers helps Global Electronc Solutions offer a price more discounted than the price of our competitors." image="icon02.png" right={false}/>
