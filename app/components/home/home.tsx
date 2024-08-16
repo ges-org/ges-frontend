@@ -33,7 +33,7 @@ export default function Main() {
             </div>
            </div>
            </div>
-        <div className="go-down absolute -bottom-20 left-[37%]">
+        <div className=" lg:inline md:inline hidden go-down absolute -bottom-20 left-[37%]">
                 <a href="#anchor-blk" id="anchor-btn">
                     <img src="https://www.plc-sensors.com/wp-content/themes/mml-theme/dist/img/p01/down.png
 " alt="down"/>

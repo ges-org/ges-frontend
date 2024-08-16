@@ -168,14 +168,14 @@ const sendReq = async () => {
       <div className="flex h-20">
           
         <div className=" bg-white shadow-md w-full"> 
-          <div className=" flex p-3 md:p-0 lg:p-0  ">
+          <div className=" flex p-[2px] sm:p-3 md:p-0 lg:p-0  ">
           <div className=" p-1 px-2 cursor-pointer" >
             <Link href={"/"}>
             <img width={80} src="https://5.imimg.com/data5/SELLER/Logo/2023/8/332359348/WL/RS/SO/102816454/logo-90x90.png" alt="" />
             </Link>
           </div>
 
-          <div className="  text-black text-xl md:text-xl lg:text-2xl text-dcenter mt:mt-4 lg:mt-4 fldex items-center w-[500px] font-medium">
+          <div className="  text-black text-lg sm:text-xl md:text-xl lg:text-2xl text-dcenter mt:mt-4 lg:mt-4 fldex items-center w-[500px] font-medium">
          <Link href={"/"}>
             Global Electronics Solutions
          </Link>
@@ -183,7 +183,7 @@ const sendReq = async () => {
               <div className=" text-xs max-w-xs md:max-w-sm lg:max-w-sm">Global Electronic Solutions, Gurgaon, Gurugram, Haryana</div>
             </div>
           </div>
-          <div onClick={()=>{ setResponsiveNav(!responseiveNav);setShowSearch(false);setSearchTerm('') }} className=" md:hidden lg:hidden cursor-pointer text-black">
+          <div onClick={()=>{ setResponsiveNav(!responseiveNav);setShowSearch(false);setSearchTerm('') }} className=" scale-75 md:scale-100 lg:scale-100 md:hidden lg:hidden cursor-pointer text-black">
            <MenuIcon size={45}/>
         </div> 
           </div>
@@ -199,7 +199,7 @@ const sendReq = async () => {
           }} 
             
            className={`${responseiveNav?'':'hidden'} text-black -mt-2 border-t-4 pt-3 justify-center bg-white w-full pb-3 shadow-md`}>
-          <div className=" p-3">
+          <div className=" p-1 lg:p-3">
           <div className=" relative flex justify-center flex-col items-center -mt-2 w-full">
         <div className="flex flex-col  w-full items-center relative text-black">
   <input  
