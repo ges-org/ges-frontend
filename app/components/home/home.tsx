@@ -20,13 +20,13 @@ export default function Main() {
            <div className=" flex justify-start ">
            <div className="max-w-xl px-9 py-14 rounded-lg bg-[rgba(57,59,59,0.7)]">
             <div className=" text-3xl md:text-4xl lg:text-5xl font-semibold">
-           Industrial Automation Products Distributor in India
+           Cooling Fans Distributor in India
             </div>
             <div className=" py-9">
-            With dozens of reputed and dependable market-leading distributorships, United Automation is your one-stop sourcing base.
+            With dozens of reputed and dependable market-leading distributorships, Global Eletronic Solutions is your one-stop sourcing base.
             </div>
             <div className="  ">
-            We supply whatever you need, with the price far lower than the market rates.
+            We supply best quality cooling fans, with the price far lower than the market rates.
             </div>
             <div className=" flex justify-start">
             <Button contact={true} label={'Contact us'} onclick={toggleEnquiryCard} height={20} />
