@@ -1,5 +1,5 @@
 export const AdvantageCard = ({title, content, right, image}:{title:string, content:string, right?:boolean, image:string})=>{
-  return <div className=" transition-all duration-500 mt-5 hover:bg-[#ffd447] rounded-lg py-10 px-3">
+  return <div className=" transition-all duration-500 mt-5 hover:bg-sky-400 rounded-lg py-10 px-3">
     <div className=" lg:flex">
 
     <div className={`${right?'hidden':''}`}>
