@@ -2,7 +2,7 @@ export const About = ()=>{
   return <div className="lg:relative max-w-screen-2xl  bg-white text-black">
     <div className="container mx-auto px-8 lg:px-2 w-full max-w-screen-xl box-border  ">
       <div className=" lg:ml-auto m-0 lg:p-custom lg:reltive z-20 w-full lg:madx-w-xl lg:w-3/6 ">
-        <div className=" text-yellow-400 font-medium text-3xl t">
+        <div className=" text-sky-400 font-medium text-3xl t">
           India{"'"}s #1
         </div>
         <div className=" mt-6 text-4xl font-semibold ">
