@@ -31,12 +31,12 @@ export const Advantages = ()=>{
          <img className=" rounded-md lg:max-w-xl lg:w-5/5 m-auto overflow-hidden" src="https://www.plc-sensors.com/wp-content/themes/mml-theme/dist/img/p01/s06-pic.jpg" alt="" />
       </div>
       <div>
-        <AdvantageCard title="On-hand Inventory" content="Accessing domestic distribution bases easily, We are at your service with on-hand inventory." image="icon03.png" right={false}/>
+        <AdvantageCard title="On-hand Inventory" content="Accessing domestic distribution bases easily, We are at your service with on-hand inventory." image="icon03.png" right={ isLargeScreen?true: false}/>
         <AdvantageCard title="Worry-Free Service" content="Full support throughout our presale, sales and after-sales services, is available with the help of our product experts, including:
 
 24/7 consultation
 24/7 order processing
-12-month warranty" image="icon04.png" right={false}/> 
+12-month warranty" image="icon04.png" right={ isLargeScreen?true: false}/> 
       </div>
     </div> 
     </div>
