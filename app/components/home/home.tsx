@@ -38,3 +38,4 @@ export default function Main() {
       {contactBtn && <EnquiryCard contact={true} />}
 
   </div>
+}
