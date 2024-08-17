@@ -254,7 +254,7 @@ if (!isHydrated) {
                   <motion.div
                     animate={{ x: `-${miniIndex * 100}%` }}
                     transition={{ duration: 2.7, ease: [0.32, 0.72, 0, 1] }}
-                    className={` flex max-w-lg md:gap-10 ${images.length<4?' justify-center':''} lg:gap-`}>
+                    className={` rounded-md flex max-w-lg gap-6 md:gap-10 ${images.length<4?' justify-center':''} lg:gap-`}>
                     {products.product.img.map((image, idx) => (
                       <img
                         key={idx}
