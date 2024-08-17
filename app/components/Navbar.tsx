@@ -7,7 +7,7 @@ import Link from "next/link";
 import { EnquiryCard } from "./cards/EnquiryCard";
 import { useRecoilState } from "recoil";
 import {  productNameState, quoteState, responsiveNavState, sendEnquiryState, showSearchState } from "../recoilContextProvider";
-import { Cross, ExternalLink, Link2Icon, MenuIcon, Search, X } from "lucide-react";
+import { Cross, ExternalLink, Link2Icon, MenuIcon, Phone, PhoneCall, Search, X } from "lucide-react";
 import { countries } from "./sample";
 import axios from "axios";
 import { BACKEND_URL } from "../lib/config";
@@ -191,13 +191,25 @@ useEffect(() => {
             </Link>
           </div>
 
-          <div className="  text-black text-lg sm:text-xl md:text-xl lg:text-2xl text-dcenter mt:mt-4 lg:mt-4 fldex items-center md:w-[500px] lg:w-[500px] font-medium">
-         <Link href={"/"}>
+          <div className=" flex text-black text-lg sm:text-xl md:text-xl lg:text-2xl text-dcenter mt:mt-4 lg:mt-4 md:w-[500px] lg:w-[500px] font-medium gap-4">
+         <Link className="" href={"/"}>
             Global Electronics Solutions
-         </Link>
-            <div className="  ">
-              <div className=" text-xs   md:max-w-sm lg:max-w-sm">Global Electronic Solutions, Gurgaon, Gurugram, Haryana</div>
+            <div className=" items-center  ">
+              <div className=" text-xs   md:max-w-sm lg:max-w-sm">Global Electronic Solutions, Gurgaon, Gurugram, Haryana
+                </div> 
             </div>
+         </Link>
+                <div className=" flex -mt-4 items-center"> 
+                  <PhoneCall/> 
+                  <div className="text-base ml-4">
+                  <div>
+                    8383 23343
+                  </div>
+                  <div>
+                    2342 23343
+                  </div>
+                  </div>
+                </div>
           </div>
           <div onClick={()=>{ setResponsiveNav(!responseiveNav); setShowSearch(false);setSearchTerm('') }} className=" scale-75 md:scale-100 lg:scale-100 md:hidden lg:hidden cursor-pointer text-black z-50 transition-all duration-500">
             {responseiveNav?<X size={45} className=" transition-all duration-500"/>: <MenuIcon size={45} className=" transition-all duration-500"/>}

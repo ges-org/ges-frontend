@@ -76,9 +76,9 @@ else{
     email, name, message, phone, files, isProduct:false
   })
   const msg = res.data 
-  toast.success(msg.message)
   console.log(msg);
   setTimeout(() => {
+    toast.success(msg.message)
     setQuoteBtn(prevState => !prevState);  
   }, 1500);   
 }
@@ -95,19 +95,25 @@ else{
    )
     }
     else{
-      toast.loading("Sending mail...")
-      const res = await axios.post("/api/send", {
-       email, name, message, product , phone, files, isProduct:true
-      })
-      const msg = res.data
-      toast.success(msg.message)
-      console.log(msg);  
-      setShowSearch(false) 
-      setTimeout(() => {
-        if(sendEnq) setSendEnquiry(prevState => !prevState);
-        else setEnquiryBtn(prevState => !prevState);  
-     
-      }, 1500);
+      try {
+        
+        toast.loading("Sending mail...")
+        const res = await axios.post("/api/send", {
+         email, name, message, product , phone, files, isProduct:true
+        })
+        const msg = res.data
+        toast.success(msg.message)
+        console.log(msg);  
+        setShowSearch(false) 
+        setTimeout(() => {
+          if(sendEnq) setSendEnquiry(prevState => !prevState);
+          else setEnquiryBtn(prevState => !prevState);  
+       
+        }, 1500);
+      } catch (error) {
+  toast.error('Error sending mail please try again in some time');
+        
+      }
     }
     }
 
@@ -120,16 +126,22 @@ else{
    )
     }
     else{
-      toast.loading("Sending mail...")
-      const res = await axios.post("/api/send", {
-       email, name, message , phone, files, isProduct:false
-      })
-      const msg = res.data
-      toast.success(msg.message)
-      console.log(msg);  
-      setTimeout(() => {
-        setContactBtn(prevState => !prevState);  
-      }, 1500);
+      try {
+        
+        toast.loading("Sending mail...")
+        const res = await axios.post("/api/send", {
+         email, name, message , phone, files, isProduct:false
+        })
+        const msg = res.data
+        console.log(msg);  
+        toast.success(msg.message)
+        setTimeout(() => {
+          setContactBtn(prevState => !prevState);  
+        }, 1500);
+      } catch (error) {
+  toast.error('Error sending mail please try again in some time');
+        
+      }
     }
     }
 

@@ -44,7 +44,7 @@ export const Footer = ()=>{
   ]
   
   
-  return <footer className="footer">
+  return <footer className="footer ">
     <div className=" pt-16 md:pt-20 lg:pt-32 pb-20 ">
       <div className=" px-8 lg:px-4 md:mx-20 lg:mx-28">
       <div className=" flex">

@@ -9,10 +9,18 @@
 }
 
 .banner{
-  background-image: url(https://www.plc-sensors.com/wp-content/themes/mml-theme/dist/img/p01/s01-bg.jpg);
-  background-size: cover; /* or background-size: 100% 100%; */
+  background-image: url(../public/11013434_45256-Photoroom.png);
+  background-size: 100% 120%; 
   background-position: center;
-  /* background-repeat: no-repeat;  */
+  background-repeat: no-repeat; 
+}
+
+
+@media screen and (max-width: 580px) {
+  .banner {
+    background-size: 140% 100%; 
+
+  }
 }
 
 .image-bg{
