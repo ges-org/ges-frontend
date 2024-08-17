@@ -65,7 +65,7 @@ export const EnquiryCard = ({quote, enquiry, contact, sendEnq, productName, quan
 
     if (name=="" ||phone=="") {
       toast.warning( 
-          "Please enter all the necessary feilds"
+          "Please enter all the necessary feildszzzzzzzzzzzzzzz"
      )
     }
 else{
@@ -77,8 +77,8 @@ else{
   })
   const msg = res.data 
   console.log(msg);
+  toast.success(msg.message)
   setTimeout(() => {
-    toast.success(msg.message)
     setQuoteBtn(prevState => !prevState);  
   }, 1500);   
 }
@@ -107,8 +107,7 @@ else{
         setShowSearch(false) 
         setTimeout(() => {
           if(sendEnq) setSendEnquiry(prevState => !prevState);
-          else setEnquiryBtn(prevState => !prevState);  
-       
+          else setEnquiryBtn(prevState => !prevState);   
         }, 1500);
       } catch (error) {
   toast.error('Error sending mail please try again in some time');

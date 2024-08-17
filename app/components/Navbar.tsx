@@ -6,7 +6,7 @@ import { Button } from "./ui/Button";
 import Link from "next/link";
 import { EnquiryCard } from "./cards/EnquiryCard";
 import { useRecoilState } from "recoil";
-import {  productNameState, quoteState, responsiveNavState, sendEnquiryState, showSearchState } from "../recoilContextProvider";
+import {  enquiryState, productNameState, quoteState, responsiveNavState, sendEnquiryState, showSearchState } from "../recoilContextProvider";
 import { Cross, ExternalLink, Link2Icon, MenuIcon, Phone, PhoneCall, Search, X } from "lucide-react";
 import { countries } from "./sample";
 import axios from "axios";
@@ -26,7 +26,8 @@ export default function Navbar() {
 function NavbarCheck({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   const [active2, setActive2] = useState<string | null>(null);
-  const [showEnquiryCard, setShowEnquiryCard] = useRecoilState(quoteState);
+  const [showEnquiryCard, setShowEnquiryCard] = useRecoilState(enquiryState);
+  const [showQuoteCard, setShowQuoteCard] = useRecoilState(quoteState);
   const [sendEnquiry, setSendEnquiry] = useRecoilState(sendEnquiryState)
   const[start,setStart] = useRecoilState(responsiveNavState) 
   const [showSearch, setShowSearch] = useRecoilState(showSearchState)
@@ -120,6 +121,13 @@ const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>)=>{
   debounceSearch(value)
 }
  
+
+ 
+  const toggleQuoteCard = () => {
+    console.log('inside the quote card');
+    
+    setShowQuoteCard(!showQuoteCard); 
+  };
  
   const toggleEnquiryCard = () => {
     setShowEnquiryCard(!showEnquiryCard); 
@@ -394,11 +402,12 @@ useEffect(() => {
 </div>
 
           <div className=" -mt-1 -ml-3">
-            <Button quote={true} nav={true} label={"Request a quote "} height={2} onclick={toggleEnquiryCard} productCard={false} />
+            <Button quote={true} nav={true} label={"Request a quote "} height={2} onclick={()=>toggleQuoteCard()} productCard={false} />
           </div>
         </div> 
       </div>
-      {showEnquiryCard && <EnquiryCard quote={ true}  />}
+      {/* {showEnquiryCard && <EnquiryCard quote={ true}  />} */}
+      {showQuoteCard && <EnquiryCard quote={ true}  />}
       {sendEnquiry && <EnquiryCard sendEnq={ true}  />}
 
     </div>
