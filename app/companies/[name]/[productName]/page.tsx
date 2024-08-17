@@ -304,7 +304,7 @@ if (!isHydrated) {
                 {prodName}
               </div>
               <div className=" mt-5 text-xl font-normal">
-             series #{prodName.split(' ')[4] + " " +prodName.split(' ')[5]}
+             series #{ prodName.includes("NMB")?prodName.split(' ')[4] + " " +prodName.split(' ')[5] : prodName.includes('SUNON')||prodName.includes('Melco')||prodName.includes('ADDA')||prodName.includes('DELTA')?prodName.split(' ')[2] + " " +prodName.split(' ')[3]: prodName.split(' ')[3] + " " +prodName.split(' ')[4]}
               </div> 
               
               <div className=" font-semibold mt-12 text-lg">

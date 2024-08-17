@@ -6,7 +6,7 @@ import { Button } from "./ui/Button";
 import Link from "next/link";
 import { EnquiryCard } from "./cards/EnquiryCard";
 import { useRecoilState } from "recoil";
-import {  quoteState, responsiveNavState, sendEnquiryState, showSearchState } from "../recoilContextProvider";
+import {  productNameState, quoteState, responsiveNavState, sendEnquiryState, showSearchState } from "../recoilContextProvider";
 import { Cross, ExternalLink, Link2Icon, MenuIcon, Search, X } from "lucide-react";
 import { countries } from "./sample";
 import axios from "axios";
@@ -32,6 +32,8 @@ function NavbarCheck({ className }: { className?: string }) {
   const [showSearch, setShowSearch] = useRecoilState(showSearchState)
   const [list, setList] = useState([])
   const [responseiveNav, setResponsiveNav] = useState(false)
+  const [productName, setProductName] = useRecoilState(productNameState)
+
   const[searchTerm, setSearchTerm] = useState('')
   const[searchResult, setSearchResult] = useState<[{company:string [], product:string[]}]>([
     {
@@ -136,7 +138,7 @@ const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>)=>{
 
       console.log(item.product.length);
       return <div key={idx2}>
-         <Link onClick={()=>{setSearchTerm(''); setResponsiveNav(!responseiveNav)}} href={`/companies/${companyName}/${item.product[idx2][1]}`} key={idx2} >
+         <Link onClick={()=>{  setProductName(companyName + " "+ item.product[idx2][1]+item.product[idx2][2] +item.product[idx2][3] ); !isLargeScreen?setResponsiveNav(!responseiveNav):setSearchTerm('')}} href={`/companies/${companyName}/${item.product[idx2][1]}`} key={idx2} >
     <div className=" hover:bg-slate-100 p-2 hover:scale-105 hover:text-slate-800 transition-all duration-500 cursor-pointer mt-2 border-b-2 "> {companyName}, {item.product[idx2]}  </div> 
      </Link>
       </div>
@@ -161,6 +163,20 @@ const sendReq = async () => {
   // setCompany(response)
 }
 
+const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+useEffect(() => {
+  const handleResize = () => {
+    setIsLargeScreen(window.innerWidth >= 1024); // Adjust the breakpoint as needed
+  };
+
+  window.addEventListener('resize', handleResize);
+  handleResize(); // Set initial value
+
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
+
+
   return (
     <div
       className={cn("fixed flex-none inset-x-11 mx-aukto w-full z-40", className)}
@@ -183,7 +199,7 @@ const sendReq = async () => {
               <div className=" text-xs   md:max-w-sm lg:max-w-sm">Global Electronic Solutions, Gurgaon, Gurugram, Haryana</div>
             </div>
           </div>
-          <div onClick={()=>{ setResponsiveNav(!responseiveNav);setShowSearch(false);setSearchTerm('') }} className=" scale-75 md:scale-100 lg:scale-100 md:hidden lg:hidden cursor-pointer text-black z-50 transition-all duration-500">
+          <div onClick={()=>{ setResponsiveNav(!responseiveNav); setShowSearch(false);setSearchTerm('') }} className=" scale-75 md:scale-100 lg:scale-100 md:hidden lg:hidden cursor-pointer text-black z-50 transition-all duration-500">
             {responseiveNav?<X size={45} className=" transition-all duration-500"/>: <MenuIcon size={45} className=" transition-all duration-500"/>}
           
         </div> 
