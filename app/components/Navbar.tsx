@@ -301,7 +301,7 @@ useEffect(() => {
   </div>
 </div>
 
-          <div className=" mt-5 ">
+          <div className=" mt-5 "> 
             <Button quote={true} nav={true} label={"Request a quote "} height={12} onclick={()=> {toggleQuoteCard(); setResponsiveNav(!responseiveNav)}} productCard={false} />
           </div>
         </div> 
