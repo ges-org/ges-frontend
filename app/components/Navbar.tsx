@@ -44,7 +44,7 @@ function NavbarCheck({ className }: { className?: string }) {
   ])
   const debounceTimeout = useRef<any>(null)
 
-  const DELAY = 2000
+  const DELAY = 500
 
 
 // Search Filteration
@@ -302,7 +302,7 @@ useEffect(() => {
 </div>
 
           <div className=" mt-5 ">
-            <Button quote={true} nav={true} label={"Request a quote "} height={12} onclick={()=> {toggleEnquiryCard(); setResponsiveNav(!responseiveNav)}} productCard={false} />
+            <Button quote={true} nav={true} label={"Request a quote "} height={12} onclick={()=> {toggleQuoteCard(); setResponsiveNav(!responseiveNav)}} productCard={false} />
           </div>
         </div> 
           </div>
