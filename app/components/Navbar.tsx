@@ -188,7 +188,7 @@ useEffect(() => {
     <div
       className={cn("fixed flex-none inset-x-11 mx-aukto w-full z-40", className)}
     >
-      <div className="flex h-20">
+      <div className="flex sm:h-20 md:h-20 lg:h-20">
           
         <div className=" bg-white shadow-md w-full"> 
           <div className=" flex p-[2px] sm:p-3 md:p-0 lg:p-0  ">
@@ -204,7 +204,7 @@ useEffect(() => {
             <div className=" items-center  ">
               <div className=" text-xs   md:max-w-sm lg:max-w-sm">Global Electronic Solutions, Gurgaon, Gurugram, Haryana
                 </div> 
-                <div className="   lg:hidden mt-2 flex gap-3 lg:-mt-4 items-center"> 
+                <div className=" lg:hidden flex gap-3 lg:-mt-4 items-center"> 
                   <PhoneCall/> 
                   <div className=" flex gap-5 text-xs lg:text-base lg:ml-4">
                   <div>
